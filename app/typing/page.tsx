@@ -123,7 +123,7 @@ export default function TypingTester() {
   };
 
   // Finish test
-  const finishTest = () => {
+  const finishTest = useCallback(() => {
     if (!startTime) return;
 
     const duration = (Date.now() - startTime) / 1000;
@@ -138,7 +138,7 @@ export default function TypingTester() {
     setResults((prev) => [...prev, result].slice(-10));
     setIsActive(false);
     setIsFinished(true);
-  };
+  }, [startTime, currentWPM, currentAccuracy, textType]);
 
   // Timer effect for timed tests
   useEffect(() => {
@@ -155,7 +155,7 @@ export default function TypingTester() {
 
       return () => clearInterval(timer);
     }
-  }, [isActive, testMode, timeLeft]);
+  }, [isActive, testMode, timeLeft, finishTest]);
 
   // Calculate stats continuously
   useEffect(() => {

@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 interface ToolCardProps {
-  id: string;
   name: string;
   description: string;
   icon: React.ReactNode;
@@ -11,7 +10,6 @@ interface ToolCardProps {
 }
 
 export default function ToolCard({
-  id,
   name,
   description,
   icon,

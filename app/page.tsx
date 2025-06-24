@@ -105,7 +105,6 @@ export default function HomePage() {
           {tools.map((tool) => (
             <ToolCard
               key={tool.id}
-              id={tool.id}
               name={tool.name}
               description={tool.description}
               icon={tool.icon}

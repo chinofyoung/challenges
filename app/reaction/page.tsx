@@ -20,7 +20,6 @@ export default function ReactionTimeTester() {
   const [results, setResults] = useState<ReactionResult[]>([]);
   const [currentColor, setCurrentColor] = useState<string>("#ff0000");
   const [targetColor, setTargetColor] = useState<string>("#00ff00");
-  const [countdown, setCountdown] = useState<number>(0);
   const gameAreaRef = useRef<HTMLDivElement>(null);
 
   // Calculate average reaction time
